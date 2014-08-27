@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>把R 和Python 串起來</title>
+  <meta charset="utf-8">
+  <meta name="description" content="把R 和Python 串起來">
+  <meta name="author" content="Wush Wu">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/zenburn.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/custom.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/Taiwan-R-logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>把R 和Python 串起來</h1>
+    <h2>正港R皮Py骨</h2>
+    <p>Wush Wu<br/>Taiwan R User Group</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="segue dark" id="slide-1" style="background:; background-repeat:no-repeat; background-position:center; ">
+  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+  <hgroup>
+    <h2>前言</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="large" id="slide-2">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>關於講者</p>
+
+<h3>Taiwan R User Group</h3>
+
+<h3>熱愛R</h3>
+
+<h3>因為某個原因，寫Python時心裡不舒服</h3>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-3">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/member_74897872.jpeg" class="grayscale" /></p>
+
+<h2>關於R 社群</h2>
+
+<h3>每週一晚上舉辦MLDM Monday</h3>
+
+<h3>歡迎所有和資料相關的故事</h3>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue dark" id="slide-4" style="background:; background-repeat:no-repeat; background-position:center; ">
+  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+  <hgroup>
+    <h2>為什麼要串Python?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="large" id="slide-5">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>因為Python在處理中文上比R 方便很多</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-6">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>個人在R 裡面寫Python</p>
+
+<p>心裡的不舒適感就消失了</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-7">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>在R和Python的串接上</p>
+
+<p>已經有RPy2可以在Python裡面呼叫R</p>
+
+<p>但是這對敝人小弟在下我來說</p>
+
+<p>非常的讓人不舒服</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-8">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>在R中呼叫Python</p>
+
+<p>傳說中有RSPython</p>
+
+<p>然而小弟我有個缺點：</p>
+
+<p>第一次的使用經驗就是全部</p>
+
+<p>所以...</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-9">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>即使我是Python外行</p>
+
+<p>Python的官網實在太強了</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-10">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  <h2><a href="https://docs.python.org/2/extending/embedding.html">Embedding Python in Another Application</a></h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="c">#include &lt;Python.h&gt;
+
+int
+main(int argc, char *argv[])
+{
+  Py_SetProgramName(argv[0]);  /* optional but recommended */
+  Py_Initialize();
+  PyRun_SimpleString(&quot;from time import time,ctime\n&quot;
+                     &quot;print &#39;Today is&#39;,ctime(time())\n&quot;);
+  Py_Finalize();
+  return 0;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-11">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>根據最近搞Tutorial的心得</p>
+
+<p>要讓code在別人的電腦能跑非常的困難</p>
+
+<p>讓我們來瞧瞧這段code能不能跑</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-12">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="bash">cc hello.c -o hello 2&gt;&amp;1
+</code></pre>
+
+<pre><code>## hello.c:1:10: fatal error: &#39;Python.h&#39; file not found
+## #include &lt;Python.h&gt;
+##          ^
+## 1 error generated.
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-13">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  <h2><a href="https://docs.python.org/2/extending/embedding.html#compiling-and-linking-under-unix-like-systems">5.6. Compiling and Linking under Unix-like systems</a></h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul>
+<li><code>pythonX.Y-config --cflags</code></li>
+<li><code>pythonX.Y-config --ldflags</code></li>
+</ul>
+
+<p><img src="assets/img/compile_python.png" alt=""></p>
+
+<pre><code>## Today is Wed Aug 27 23:45:03 2014
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-14">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Windows?</p>
+
+<p><img src="assets/img/win_suck.jpeg" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-15">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>距離成功已經不遠</p>
+
+<pre><code class="c">#include &lt;Python.h&gt;
+
+int
+main(int argc, char *argv[])
+{
+  Py_SetProgramName(argv[0]);  /* optional but recommended */
+  Py_Initialize();
+  PyRun_SimpleString(&quot;from time import time,ctime\n&quot;
+                     &quot;print &#39;Today is&#39;,ctime(time())\n&quot;);
+  Py_Finalize();
+  return 0;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-16">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>GNU R</p>
+
+<p><img src="assets/img/Rlogo.jpg" alt=""></p>
+
+<p>主要工作用的工具</p>
+
+<p>擅長於資料分析</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-17">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Python 擁有一些R 缺乏的功能：</p>
+
+<h3>boto: AWS Client</h3>
+
+<h3>Data Cleaning</h3>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-18">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>透過Rcpp寫一些C++函數來：</p>
+
+<h3>啟動Python Interpreter</h3>
+
+<pre><code class="cpp">Py_Initialize
+</code></pre>
+
+<h3>傳遞指令到Python</h3>
+
+<pre><code class="cpp">PyRun_SimpleString
+</code></pre>
+
+<h3>關閉Python Interpreter</h3>
+
+<pre><code class="cpp">Py_Finalize
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-19">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+void initialize_python() {
+    Py_SetProgramName(&quot;&quot;);  /* optional but recommended */
+    Py_Initialize();
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-20">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>在R 之中編譯和連結並不困難...</p>
+
+<pre><code class="r">py_cflags &lt;- system(&quot;python2.7-config --cflags&quot;, intern=TRUE)
+Sys.setenv(&quot;PKG_CFLAGS&quot;=sprintf(&quot;%s %s&quot;, Sys.getenv(&quot;PKG_CFLAGS&quot;), py_cflags))
+Sys.setenv(&quot;PKG_CXXFLAGS&quot;=sprintf(&quot;%s %s -I/opt/local/include&quot;, Sys.getenv(&quot;PKG_CXXFLAGS&quot;), py_cflags))
+py_ldflags &lt;- system(&quot;python2.7-config --ldflags&quot;, intern=TRUE)
+# mac ports
+Sys.setenv(&quot;PKG_LIBS&quot;=sprintf(&quot;%s %s %s&quot;, Sys.getenv(&quot;PKG_CFLAGS&quot;), 
+  &quot;-L /opt/local/lib -lboost_python-mt&quot;, py_ldflags))
+# ubuntu
+# Sys.setenv(&quot;PKG_LIBS&quot;=sprintf(&quot;%s %s %s&quot;, Sys.getenv(&quot;PKG_CFLAGS&quot;), 
+# &quot;-lboost_python-py27&quot;, py_ldflags))
+</code></pre>
+
+<p>因為是Python的場子</p>
+
+<p>就不多說R, Rcpp的編譯細節</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-21">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>打開Python</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+void initialize_python() {
+    Py_SetProgramName(&quot;&quot;);  /* optional but recommended */
+    Py_Initialize();
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-22">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>關閉Python</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+void finalize_python() {
+    Py_Finalize();
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-23">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Hello World</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+void hello_python() {
+    PyRun_SimpleString(&quot;from time import time,ctime\n&quot;
+                       &quot;print &#39;Today is&#39;,ctime(time())\n&quot;);
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-24">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+void py(const std::string&amp; cmd) {
+  PyRun_SimpleString(cmd.c_str());
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-25" style="background:; background-repeat:no-repeat; background-position:center; ">
+  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="large" id="slide-26">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>試跑</p>
+
+<pre><code class="r">initialize_python()
+hello_python()
+py(&quot;print &#39;hello world&#39;&quot;)
+</code></pre>
+
+<pre><code>## Today is Wed Aug 27 23:45:20 2014
+</code></pre>
+
+<pre><code>## hello world
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue dark" id="slide-27" style="background:; background-repeat:no-repeat; background-position:center; ">
+  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+  <hgroup>
+    <h2>R 和Python的資料交換</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="large" id="slide-28">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Rcpp: R &lt;====&gt; C++</p>
+
+<p>Boost.Python: Python &lt;====&gt; C++</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-29">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<table><thead>
+<tr>
+<th align="left">R</th>
+<th align="left">Rcpp</th>
+<th align="left">Python</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">integer</td>
+<td align="left">IntegerVector</td>
+<td align="left">List</td>
+</tr>
+<tr>
+<td align="left">numeric</td>
+<td align="left">NumericVector</td>
+<td align="left">List</td>
+</tr>
+<tr>
+<td align="left">character</td>
+<td align="left">CharacterVector</td>
+<td align="left">List</td>
+</tr>
+<tr>
+<td align="left">raw</td>
+<td align="left">RawVector</td>
+<td align="left">List</td>
+</tr>
+</tbody></table>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-30">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>IntegerVector ==&gt; Python List</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;boost/python/raw_function.hpp&gt;
+
+namespace py = boost::python;
+typedef Rcpp::XPtr&lt;py::list&gt; PyList; // 將記憶體交給R的GC管理
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+SEXP IntVec_to_py_list(IntegerVector src) {  
+    PyList pretval(new py::list()); // 建立物件
+    int glue;
+    for(int i = 0;i &lt; src.size();i++) {
+        glue = src[i]; 
+        pretval-&gt;append(glue); // 等同於 list.append
+    }
+    return pretval;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-31">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="r">x &lt;- IntVec_to_py_list(1:10)
+print(x)
+</code></pre>
+
+<pre><code>## &lt;pointer: 0x7f9bf9619bf0&gt;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-32">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>將R 管理的Python物件傳給Python</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-33">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+#include &lt;boost/python/raw_function.hpp&gt;
+
+namespace py = boost::python;
+
+typedef Rcpp::XPtr&lt;py::list&gt; PyList;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+void pyfun(std::string fun_name, SEXP fun_argument) {
+    // 建立__main__的參照
+    py::object module((py::handle&lt;&gt;(py::borrowed(PyImport_AddModule(&quot;__main__&quot;)))));
+    // 在__main__找 fun_name並回傳參照
+    py::object pyfun = module.attr(&quot;__dict__&quot;)[fun_name.c_str()];
+    // 將R的物件轉換成python物件
+    py::list argv(*PyList(fun_argument));
+    // 呼叫
+    pyfun(argv);
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-34">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="r">py(&quot;
+def print_list(list):
+  for a in list:
+    print a
+&quot;)
+pyfun(&quot;print_list&quot;, x)
+</code></pre>
+
+<pre><code>## 1
+## 2
+## 3
+## 4
+## 5
+## 6
+## 7
+## 8
+## 9
+## 10
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue dark" id="slide-35" style="background:; background-repeat:no-repeat; background-position:center; ">
+  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+  <hgroup>
+    <h2>錯誤處理</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="large" id="slide-36">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+#include &lt;Python.h&gt;
+#include &lt;boost/python/raw_function.hpp&gt;
+
+namespace py = boost::python;
+
+typedef Rcpp::XPtr&lt;py::list&gt; PyList;
+
+//[[Rcpp::export]]
+void pyfun(std::string fun_name, SEXP fun_argument) {
+    try {
+        py::object module((py::handle&lt;&gt;(py::borrowed(PyImport_AddModule(&quot;__main__&quot;)))));
+        py::object pyfun = module.attr(&quot;__dict__&quot;)[fun_name.c_str()];
+        py::list argv(*PyList(fun_argument));
+        pyfun(argv);
+    }
+    catch (py::error_already_set) { // Python的Exception轉換為C++ Exception
+        PyErr_Print(); // 印出錯誤訊息
+    }
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-37">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="r">py(&quot;
+def print_list(src):
+    for i in src:
+        print i
+&quot;)
+a &lt;- IntVec_to_py_list(1:10)
+pyfun(&quot;print_lists&quot;, a) # 打錯函數名稱
+</code></pre>
+
+<pre><code>## KeyError: &#39;print_lists&#39;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue dark" id="slide-38" style="background:; background-repeat:no-repeat; background-position:center; ">
+  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+  <hgroup>
+    <h2>實例分享</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="large" id="slide-39">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>一年多前的實驗結果：</p>
+
+<p>Rython, 一個R 呼叫Python的套件</p>
+
+<p><a href="https://github.com/wush978/Rython">https://github.com/wush978/Rython</a></p>
+
+<p>It works on My Machine</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-40">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Data Cleaning</p>
+
+<pre><code class="py">def clean_data(filename):
+  # ...
+</code></pre>
+
+<pre><code class="r">raw_data &lt;- pyfun(&quot;clean_data&quot;, path)
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-41">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>AWS API</p>
+
+<pre><code class="r"># 在R 把資料整理好之後...
+py(&quot;import boto&quot;)
+# 開始把資料往雲端打
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-42">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Q&amp;A</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='前言'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='為什麼要串Python?'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title=''>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='<a href="https://docs.python.org/2/extending/embedding.html">Embedding Python in Another Application</a>'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title=''>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title=''>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='<a href="https://docs.python.org/2/extending/embedding.html#compiling-and-linking-under-unix-like-systems">5.6. Compiling and Linking under Unix-like systems</a>'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title=''>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title=''>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title=''>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title=''>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title=''>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title=''>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title=''>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title=''>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title=''>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title=''>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title=''>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title=''>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='R 和Python的資料交換'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title=''>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title=''>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title=''>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title=''>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title=''>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title=''>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title=''>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='錯誤處理'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title=''>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title=''>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='實例分享'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title=''>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title=''>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title=''>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title=''>
+         42
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
