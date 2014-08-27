@@ -242,7 +242,7 @@ main(int argc, char *argv[])
 
 <p><img src="assets/img/compile_python.png" alt=""></p>
 
-<pre><code>## Today is Wed Aug 27 23:45:03 2014
+<pre><code>## Today is Wed Aug 27 23:55:18 2014
 </code></pre>
 
 </article>
@@ -466,6 +466,8 @@ void hello_python() {
   
 </hgroup>
 <article class = 'flexbox vcenter'>
+<p>執行任意的Python指令</p>
+
 <pre><code class="cpp">#include &lt;Rcpp.h&gt;
 #include &lt;Python.h&gt;
 
@@ -480,15 +482,7 @@ void py(const std::string&amp; cmd) {
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-25" style="background:; background-repeat:no-repeat; background-position:center; ">
-  <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="large" id="slide-26">
+<slide class="large" id="slide-25">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -501,7 +495,7 @@ hello_python()
 py(&quot;print &#39;hello world&#39;&quot;)
 </code></pre>
 
-<pre><code>## Today is Wed Aug 27 23:45:20 2014
+<pre><code>## Today is Wed Aug 27 23:55:39 2014
 </code></pre>
 
 <pre><code>## hello world
@@ -510,7 +504,7 @@ py(&quot;print &#39;hello world&#39;&quot;)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="segue dark" id="slide-27" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="segue dark" id="slide-26" style="background:; background-repeat:no-repeat; background-position:center; ">
   <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
   <hgroup>
     <h2>R 和Python的資料交換</h2>
@@ -521,7 +515,7 @@ py(&quot;print &#39;hello world&#39;&quot;)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="large" id="slide-28">
+<slide class="large" id="slide-27">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -534,7 +528,7 @@ py(&quot;print &#39;hello world&#39;&quot;)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-29">
+<slide class="large" id="slide-28">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -572,7 +566,7 @@ py(&quot;print &#39;hello world&#39;&quot;)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-30">
+<slide class="large" id="slide-29">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -602,7 +596,7 @@ SEXP IntVec_to_py_list(IntegerVector src) {
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-31">
+<slide class="large" id="slide-30">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -612,13 +606,13 @@ SEXP IntVec_to_py_list(IntegerVector src) {
 print(x)
 </code></pre>
 
-<pre><code>## &lt;pointer: 0x7f9bf9619bf0&gt;
+<pre><code>## &lt;pointer: 0x7fcb13612410&gt;
 </code></pre>
 
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-32">
+<slide class="large" id="slide-31">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -629,7 +623,7 @@ print(x)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-33">
+<slide class="large" id="slide-32">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -661,7 +655,7 @@ void pyfun(std::string fun_name, SEXP fun_argument) {
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-34">
+<slide class="large" id="slide-33">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -690,7 +684,7 @@ pyfun(&quot;print_list&quot;, x)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="segue dark" id="slide-35" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="segue dark" id="slide-34" style="background:; background-repeat:no-repeat; background-position:center; ">
   <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
   <hgroup>
     <h2>錯誤處理</h2>
@@ -701,7 +695,7 @@ pyfun(&quot;print_list&quot;, x)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="large" id="slide-36">
+<slide class="large" id="slide-35">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -732,7 +726,7 @@ void pyfun(std::string fun_name, SEXP fun_argument) {
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-37">
+<slide class="large" id="slide-36">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -753,7 +747,7 @@ pyfun(&quot;print_lists&quot;, a) # 打錯函數名稱
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="segue dark" id="slide-38" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="segue dark" id="slide-37" style="background:; background-repeat:no-repeat; background-position:center; ">
   <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
   <hgroup>
     <h2>實例分享</h2>
@@ -764,7 +758,7 @@ pyfun(&quot;print_lists&quot;, a) # 打錯函數名稱
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="large" id="slide-39">
+<slide class="large" id="slide-38">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -781,7 +775,7 @@ pyfun(&quot;print_lists&quot;, a) # 打錯函數名稱
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-40">
+<slide class="large" id="slide-39">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -799,7 +793,7 @@ pyfun(&quot;print_lists&quot;, a) # 打錯函數名稱
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-41">
+<slide class="large" id="slide-40">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -815,7 +809,7 @@ py(&quot;import boto&quot;)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="large" id="slide-42">
+<slide class="large" id="slide-41">
 <img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
 <hgroup>
   
@@ -982,13 +976,13 @@ py(&quot;import boto&quot;)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title=''>
+        data-slide=26 title='R 和Python的資料交換'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='R 和Python的資料交換'>
+        data-slide=27 title=''>
          27
       </a>
     </li>
@@ -1030,13 +1024,13 @@ py(&quot;import boto&quot;)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title=''>
+        data-slide=34 title='錯誤處理'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='錯誤處理'>
+        data-slide=35 title=''>
          35
       </a>
     </li>
@@ -1048,13 +1042,13 @@ py(&quot;import boto&quot;)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title=''>
+        data-slide=37 title='實例分享'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='實例分享'>
+        data-slide=38 title=''>
          38
       </a>
     </li>
@@ -1074,12 +1068,6 @@ py(&quot;import boto&quot;)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=41 title=''>
          41
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title=''>
-         42
       </a>
     </li>
   </ul>

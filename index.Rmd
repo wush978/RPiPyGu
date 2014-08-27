@@ -280,6 +280,8 @@ void hello_python() {
 
 --- &vcenter .large
 
+執行任意的Python指令
+
 ```{r hello_python4, engine='Rcpp', dependson='set_flags'}
 #include <Rcpp.h>
 #include <Python.h>
@@ -291,8 +293,6 @@ void py(const std::string& cmd) {
   PyRun_SimpleString(cmd.c_str());
 }
 ```
-
----
 
 ```{r redirect, include=FALSE, engine='Rcpp', dependson='hello_python4'}
 // The following code redirect the Python stdout to R console so that these examples show the result correctly in the generated html files.

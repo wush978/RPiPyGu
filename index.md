@@ -130,7 +130,7 @@ cc hello.c -o hello 2>&1
 
 
 ```
-## Today is Wed Aug 27 23:45:03 2014
+## Today is Wed Aug 27 23:55:18 2014
 ```
 
 --- &vcenter .large
@@ -290,6 +290,8 @@ void hello_python() {
 
 --- &vcenter .large
 
+執行任意的Python指令
+
 
 ```cpp
 #include <Rcpp.h>
@@ -302,8 +304,6 @@ void py(const std::string& cmd) {
   PyRun_SimpleString(cmd.c_str());
 }
 ```
-
----
 
 
 
@@ -322,7 +322,7 @@ py("print 'hello world'")
 
 
 ```
-## Today is Wed Aug 27 23:45:20 2014
+## Today is Wed Aug 27 23:55:39 2014
 ```
 
 ```
@@ -383,7 +383,7 @@ print(x)
 ```
 
 ```
-## <pointer: 0x7f9bf9619bf0>
+## <pointer: 0x7fcb13612410>
 ```
 
 --- &vcenter .large
